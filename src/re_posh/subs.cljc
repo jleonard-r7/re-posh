@@ -138,7 +138,7 @@
          ;; if there is no inputs-fn provided (or sugar version) don't wrap anything in reaction,
          ;; just return posh's query or pull
          (do
-           (js/console.log "calling execute-sub.")
+           (js/console.log "calling execute-sub with reaction.")
            (reaction
              @(execute-sub (config-fn @@store params))))
          (reaction
