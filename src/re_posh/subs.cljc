@@ -137,8 +137,10 @@
        (if (= (count input-args) 0)
          ;; if there is no inputs-fn provided (or sugar version) don't wrap anything in reaction,
          ;; just return posh's query or pull
-         (do (js/console.log "calling execute-sub.")
-         (execute-sub (config-fn @@store params)))
+         (do
+           (js/console.log "calling execute-sub.")
+           (reaction
+             @(execute-sub (config-fn @@store params))))
          (reaction
           (let [inputs (inputs-fn params)
                 signals (if (seq? inputs)
