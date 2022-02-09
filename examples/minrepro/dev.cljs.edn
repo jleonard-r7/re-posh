@@ -1,0 +1,4 @@
+^{:watch-dirs ["src"]
+  :repl-eval-timeout 1800000}
+{:main com.re-posh-minrepro.web-app
+ :npm-deps false}
